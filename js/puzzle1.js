@@ -1,38 +1,39 @@
 const grid = document.getElementById('grid');
 const feedback = document.getElementById('feedback');
+const submitBtn = document.getElementById('submitBtn');
 
-// Define the “correct pattern” as a set of tile indexes (0-99)
-const correctPattern = [0, 1, 2, 11, 22, 33, 44, 55]; // example pattern
+// Example correct pattern (tiles indexed 0-99)
+const correctPattern = [0,1,2,10,11,12,20,21,22]; // 3x3 square top-left for demo
 
-// Track user-selected tiles
-let activeTiles = new Set();
-
-// Create the 10x10 grid
+// Generate 10x10 tiles
 for (let i = 0; i < 100; i++) {
     const tile = document.createElement('div');
     tile.classList.add('tile');
     tile.dataset.index = i;
-    
+
     tile.addEventListener('click', () => {
         tile.classList.toggle('active');
-        if (tile.classList.contains('active')) {
-            activeTiles.add(i);
-        } else {
-            activeTiles.delete(i);
-        }
     });
 
     grid.appendChild(tile);
 }
 
-// Check if the pattern matches
-document.getElementById('submitBtn').addEventListener('click', () => {
-    const userPattern = Array.from(activeTiles).sort((a,b) => a-b);
-    const correctSorted = [...correctPattern].sort((a,b) => a-b);
+submitBtn.addEventListener('click', () => {
+    const tiles = document.querySelectorAll('.tile');
+    let success = true;
 
-    if (userPattern.length === correctSorted.length &&
-        userPattern.every((val, idx) => val === correctSorted[idx])) {
-        feedback.textContent = "Correct! You may proceed.";
+    tiles.forEach(tile => {
+        const idx = parseInt(tile.dataset.index);
+        const isActive = tile.classList.contains('active');
+        const shouldBeActive = correctPattern.includes(idx);
+
+        if (isActive !== shouldBeActive) {
+            success = false;
+        }
+    });
+
+    if (success) {
+        feedback.textContent = "Correct! Level unlocked.";
         feedback.style.color = "#188d45"; // green
     } else {
         feedback.textContent = "Incorrect. Try again.";
