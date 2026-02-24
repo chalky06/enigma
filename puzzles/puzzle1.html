@@ -12,24 +12,9 @@
       text-align: center;
       padding-top: 5%;
     }
-
-    h1 {
-      font-size: 2em;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    p, li {
-      margin: 5px 0;
-    }
-
-    #cipher {
-      font-weight: bold;
-      color: #ffcc00;
-      font-size: 1.2em;
-      letter-spacing: 2px;
-    }
-
+    h1 { font-size: 2em; letter-spacing: 2px; text-transform: uppercase; }
+    p, li { margin: 5px 0; }
+    #cipher { font-weight: bold; color: #ffcc00; font-size: 1.2em; letter-spacing: 2px; }
     input {
       background-color: black;
       border: 1px solid #00ff66;
@@ -38,7 +23,6 @@
       font-family: inherit;
       margin-top: 20px;
     }
-
     button {
       background-color: black;
       border: 1px solid #00ff66;
@@ -47,15 +31,8 @@
       cursor: pointer;
       margin-left: 5px;
     }
-
-    button:hover {
-      background-color: #003300;
-    }
-
-    #message {
-      margin-top: 20px;
-      color: #ff0033;
-    }
+    button:hover { background-color: #003300; }
+    #message { margin-top: 20px; color: #ff0033; }
   </style>
 </head>
 <body>
@@ -65,6 +42,7 @@
   <p id="cipher">YOLLF WZLNH</p>
   <p>Hint: Caesar cipher, shift of 7 letters.</p>
 
+  <!-- ✅ Input field for the user -->
   <form id="puzzleForm">
     <input type="text" id="answer" placeholder="Enter decrypted message">
     <button type="submit">Submit</button>
@@ -81,8 +59,8 @@
         e.preventDefault();
         const input = document.getElementById("answer").value.trim().toUpperCase();
 
-        // Correct answer is "RHIIS TOPGC" (YOLLF WZLNH shifted back 7)
-        if (input === "RHIIS TOPGC") {
+        // Correct answer
+        if (input === "RHEEY PSEGA") {
           message.style.color = "#00ff66";
           message.textContent = "Correct. Proceeding to Puzzle 2...";
           setTimeout(() => {
