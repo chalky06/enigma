@@ -21,21 +21,23 @@ body {
     display: grid;
     grid-template-columns: repeat(24, 20px);
     grid-template-rows: repeat(24, 20px);
-    gap: 1px;
+    gap: 1px;                      /* space between tiles */
     justify-content: center;
     margin-bottom: 20px;
+    background-color: #f8e208;     /* yellow grid lines */
 }
 
 .tile {
     width: 20px;
     height: 20px;
-    background-color: #010001; /* default empty */
-    border: 1px solid #333;
+    background-color: #010001;     /* default empty tile */
     cursor: pointer;
+    /* remove individual tile borders to rely on the gap + background */
+    border: none;
 }
 
 .tile.active {
-    background-color: #85b09a; /* teal */
+    background-color: #85b09a;     /* teal pattern */
 }
 
 button {
