@@ -1,17 +1,19 @@
 body {
-    background-color: black;          /* classic terminal background */
-    color: #ffffff;                   /* bright gold text */
-    font-family: monospace;           /* pixelated look */
-    font-size: 16px;                  /* readable old-school size */
-    text-align: center;               /* single column layout */
+    background-color: #0b0b0b;       /* dark terminal background */
+    color: #FFD700;                  /* gold text for Caius style */
+    font-family: "Times New Roman", serif; /* old-school classic font */
+    font-size: 16px;
+    text-align: center;
     margin: 0;
-    padding: 50px 0;                  /* vertical padding from top */
+    padding: 50px 0;
 }
 
 h1 {
-    font-size: 22px;
-    letter-spacing: 2px;              /* slightly spaced letters */
+    font-size: 24px;
+    letter-spacing: 1px;
     margin-bottom: 20px;
+    font-style: italic;              /* matches "The Virtual Caian" title style */
+    text-shadow: 0 0 3px #FFD700;   /* subtle gold glow */
 }
 
 p {
@@ -19,21 +21,21 @@ p {
 }
 
 input[type="text"] {
-    background-color: black;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    font-family: monospace;
+    background-color: #0b0b0b;
+    color: #FFD700;
+    border: 1px solid #FFD700;
+    font-family: "Courier New", monospace; /* pixelated terminal input font */
     font-size: 16px;
     padding: 5px;
-    width: 200px;
+    width: 220px;
     text-align: center;
 }
 
 button {
-    background-color: #ffffff;
-    color: black;
+    background-color: #FFD700;
+    color: #0b0b0b;
     border: none;
-    font-family: monospace;
+    font-family: "Courier New", monospace;
     font-size: 16px;
     padding: 5px 10px;
     cursor: pointer;
@@ -41,7 +43,7 @@ button {
 }
 
 button:hover {
-    background-color: #010001;    
+    background-color: #e6c200;       /* slightly darker gold on hover */
 }
 
 #feedback {
@@ -50,8 +52,8 @@ button:hover {
 }
 
 .container {
-    width: 300px;                     /* primitive fixed-width layout */
-    margin: 0 auto;                   /* center on page */
+    width: 320px;                     /* primitive fixed-width layout */
+    margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ffffff;        /* old-school bordered box */
+    border: 1px solid #FFD700;        /* gold border for old-school box */
 }
