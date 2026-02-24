@@ -21,33 +21,20 @@ body {
     display: grid;
     grid-template-columns: repeat(24, 20px);
     grid-template-rows: repeat(24, 20px);
-    gap: 1px;                      /* space between tiles */
     justify-content: center;
     margin-bottom: 20px;
-    background-color: #f8e208;     /* yellow grid lines */
 }
 
 .tile {
     width: 20px;
     height: 20px;
-    background-color: #010001;     /* default empty tile */
+    background-color: #010001;   /* black by default */
+    border: 1px solid #f8e208;   /* yellow grid lines */
     cursor: pointer;
-    /* remove individual tile borders to rely on the gap + background */
-    border: none;
 }
 
 .tile.active {
-    background-color: #85b09a;     /* teal pattern */
-}
-
-button {
-    background-color: #188d45;
-    color: #f8e208;
-    border: 1px solid #f8e208;
-    font-family: "Courier New", monospace;
-    font-size: 16px;
-    padding: 5px 10px;
-    cursor: pointer;
+    background-color: #85b09a;   /* teal pattern */
 }
 
 button:hover {
