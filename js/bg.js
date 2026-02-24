@@ -1,14 +1,8 @@
-// Select the background div
-const bg = document.querySelector('.text-bg');
+// bg.js
+const textBg = document.querySelector('.text-bg');
 
-// The string to repeat
-const text = "tfcmrglezxnqkyisduawhobpcffgfexsuovqnoxyrccfbtuorugkihbyewnqsxacmdtlyrnxukwhzranoyqmcdgxlirsuweynaztorqhxdcmlguifopqgsjvmjkwnryxacoqsmhspvoexruoyzaqcmnwdsyrghtxluisvncmfeeywrnocxqlyatshzrdguiboeqcmnwarxyosludhtgzkisbutcrynoaqmwxluzthsdkyxigtqsvohraxoycdqnmwzulsthgipvurmnoycaxqzutsdhlkigcfuxfforanoqxcywzdutslhkgmuifonaqrycxwzutlshkgmddsbdltcyrnoaqwxzydutslhkgmiefkhsxkjsopshipjfxhjhskkejoldgosfcskfjosocpxqrnowkgejscetq";
+// Base string (replace with your full text)
+const baseString = "tfcmrglezxnqkyisduawhobpcffgfexsuovqnoxyrccfbtuorugkihbyewnqsxacmdtlyrnxukwhzranoyqmcdgxlirsuweynaztorqhxdcmlguifopqgsjvmjkwnryxacoqsmhspvoexruoyzaqcmnwdsyrghtxluisvncmfeeywrnocxqlyatshzrdguiboeqcmnwarxyosludhtgzkisbut crynoaqmwxluzthsdkyxigtqsvohraxoycdqnmwzulsthgipvurmnoycaxqzutsdhlkigcfuxfforanoqxcywzdutslhkgmuifonaqrycxwzutlshkgmddsbdltcyrnoaqwxzydutslhkgmiefkhsxkjsopshipjfxhjhskkejoldgosfcskfjosocpxqrnowkgejscetq"; // truncated for example
 
-// Repeat until it fills a very large space
-let repeated = "";
-while (repeated.length < 500000) {  // you can increase this for extreme zoom
-    repeated += text;
-}
-
-// Set the repeated text as content
-bg.textContent = repeated;
+// Repeat enough times to fill the screen
+textBg.textContent = baseString.repeat(50); // 50 is safe; increase if needed
