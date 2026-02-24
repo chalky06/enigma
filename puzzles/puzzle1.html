@@ -1,12 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Puzzle 1</title>
+  <meta charset="UTF-8">
+  <title>Puzzle 1 - Vylic Puma Mystery</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff66;
+      font-family: "Courier New", monospace;
+      text-align: center;
+      padding-top: 5%;
+    }
+
+    h1 {
+      font-size: 2em;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    p, li {
+      margin: 5px 0;
+    }
+
+    #cipher {
+      font-weight: bold;
+      color: #ffcc00;
+      font-size: 1.2em;
+      letter-spacing: 2px;
+    }
+
+    input {
+      background-color: black;
+      border: 1px solid #00ff66;
+      color: #00ff66;
+      padding: 10px;
+      font-family: inherit;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: black;
+      border: 1px solid #00ff66;
+      color: #00ff66;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    button:hover {
+      background-color: #003300;
+    }
+
+    #message {
+      margin-top: 20px;
+      color: #ff0033;
+    }
+  </style>
 </head>
 <body>
+  <img src="../assets/images/caius_pixel.png" width="100" alt="Caius Pixel Logo">
   <h1>Puzzle 1</h1>
-  <p>The message reads:</p>
-  <p><strong>YOLLF WZLNH</strong></p>
-  <p>Caesar shift of 7.</p>
+  <p>Encrypted message recovered from Vylic Puma’s last post:</p>
+  <p id="cipher">YOLLF WZLNH</p>
+  <p>Hint: Caesar cipher, shift of 7 letters.</p>
+
+  <form id="puzzleForm">
+    <input type="text" id="answer" placeholder="Enter decrypted message">
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="message"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("puzzleForm");
+      const message = document.getElementById("message");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const input = document.getElementById("answer").value.trim().toUpperCase();
+
+        // Correct answer is "RHIIS TOPGC" (YOLLF WZLNH shifted back 7)
+        if (input === "RHIIS TOPGC") {
+          message.style.color = "#00ff66";
+          message.textContent = "Correct. Proceeding to Puzzle 2...";
+          setTimeout(() => {
+            window.location.href = "puzzle2.html";
+          }, 1500);
+        } else {
+          message.style.color = "#ff0033";
+          message.textContent = "Incorrect. Vylic Puma’s trail remains hidden.";
+        }
+      });
+
+      // Hidden console clues
+      console.log("Puzzle 1 loaded. Shift letters backward by 7.");
+      console.log("Look closely at the encrypted message: YOLLF WZLNH");
+    });
+  </script>
 </body>
 </html>
