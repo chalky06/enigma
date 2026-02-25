@@ -68,6 +68,9 @@ document.getElementById("submitBtn").addEventListener("click", () => {
     if (mistakes <= 2) {
         feedback.textContent = "Correct! Proceed to the next level.";
         feedback.style.color = "#85b09a";
+        const token = btoa("vylic-5822-unlocked");
+        localStorage.setItem("accessKey", token);
+        window.location.href = "puzzle2.html";
     } else {
         feedback.textContent = `Incorrect. Try again! Mistakes: ${mistakes}`;
         feedback.style.color = "#de1c42";
