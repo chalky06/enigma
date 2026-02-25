@@ -4,37 +4,33 @@ body {
     font-family: "Times New Roman", serif;
     text-align: center;
     margin: 0;
-    padding: 50px 0;
+    padding: 40px 0;
 }
 
 .container {
-    position: relative;
-    width: 640px; /* large enough for 24x24 grid */
-    max-width: 90%;
+    width: 640px;
+    max-width: 95%;
     margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #f8e208;
-    background-color: #010001;
 }
 
 #grid {
     display: grid;
     grid-template-columns: repeat(24, 20px);
     grid-template-rows: repeat(24, 20px);
+    gap: 2px;                 /* yellow grid lines */
     justify-content: center;
-    margin-bottom: 20px;
+    margin: 20px auto;
 }
 
 .tile {
     width: 20px;
     height: 20px;
-    background-color: #010001;   /* black by default */
-    border: 1px solid #f8e208;   /* yellow grid lines */
+    background-color: #f8e208; /* yellow grid base */
     cursor: pointer;
 }
 
 .tile.active {
-    background-color: #85b09a;   /* teal pattern */
+    background-color: #85b09a; /* teal draw color */
 }
 
 .main-btn {
@@ -51,20 +47,8 @@ body {
 
 .main-btn:hover {
     background-color: #de1c42;
-    color: #f8e208;
-}
-
-.button-row {
-    margin-top: 15px;
-}
-
-button:hover {
-    background-color: #de1c42;
-    color: #f8e208;
-    border: 1px solid #f8e208;
 }
 
 #feedback {
     margin-top: 15px;
-    font-style: italic;
 }
