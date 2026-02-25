@@ -98,7 +98,7 @@ submitBtn.addEventListener("click", () => {
     if (mistakes <= 2) {
         localStorage.setItem("accessKey", btoa("vylic-5822-alien"));
         feedback.textContent = "Correct";
-        feedback.style.color = "#85b09a";
+        feedback.style.color = "#188d45";
     } else {
         feedback.textContent = "Incorrect";
         feedback.style.color = "#de1c42";
